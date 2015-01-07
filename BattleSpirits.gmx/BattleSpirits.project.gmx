@@ -8,6 +8,18 @@
   <sprites name="sprites"/>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_Battle.gml</script>
+  </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_Test</font>
+  </fonts>
+  <objects name="objects">
+    <object>objects\obj_GameStart</object>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_Title</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
