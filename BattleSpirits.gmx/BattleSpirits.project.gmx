@@ -16,6 +16,9 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_GameStart</object>
+    <objects name="Spirits">
+      <object>objects\obj_spirit_template</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Title</room>

@@ -21,6 +21,12 @@
     draw HUD
     send out 1st spirits
     
+    draw_text(100,100,"TestA");
+    draw_text(100,120,"HP: ");
+
+    draw_text(200,100,"TestB");
+    draw_text(200,120,"HP: ");
+    
     //Loop
     action:
         goto (fight, item, switch, run)
