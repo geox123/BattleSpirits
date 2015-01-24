@@ -7,7 +7,155 @@
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
-  <events/>
+  <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>battleover = false;
+enum phase{
+        fight,
+        item,
+        switch_spirit,
+        run,
+        action,
+        damage_calculation,
+        endbattle
+    }
+current_phase = phase.action;    
+action_taken = false;
+cursor_pos = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>spirit_player[0] = 0;
+  var i = 0;
+ file = file_text_open_read(working_directory + "\SpiritData\BaseStats.txt");
+ file_text_readln(file);
+ while (!file_text_eof(file))
+    {
+    spirit_data1[i]= file_text_read_string(file);
+    i++;
+    file_text_readln(file);
+    }
+ var subset_start=1;
+ var datalocation=0;
+ for(i=1;i&lt;=string_length(spirit_data1[0]);i++)
+    {
+    if(string_char_at(spirit_data1[0], i)==','){
+        spirit_player[datalocation]=real(string_copy(spirit_data1[0], subset_start, i-subset_start));
+        subset_start=i+1;
+        datalocation++;
+        }
+    }
+ file_text_close(file);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>draw_text(100,100,"TestA");
+draw_text(100,120,"HP: ");
+
+draw_text(200,100,"TestB");
+draw_text(200,120,"HP: ");
+if(!battleover){
+    switch (current_phase)
+        {
+        case phase.action:
+            draw_text(100,300,"Fight");
+            draw_text(100,310,"Item");
+            draw_text(100,320,"Switch");
+            draw_text(100,330,"Run");
+            draw_text(90,300+cursor_pos,"&gt;");
+                if keyboard_check_pressed(vk_down) &amp;&amp; cursor_pos&lt;30
+                    cursor_pos+=10;
+                if keyboard_check_pressed(vk_up) &amp;&amp; cursor_pos&gt;0
+                    cursor_pos-=10;
+                if keyboard_check_pressed(ord('Z')){
+                    switch(cursor_pos/10){
+                        case 0:
+                            current_phase=phase.fight;
+                            break;
+                        case 1:
+                            current_phase=phase.item;
+                            break;
+                        case 2:
+                            current_phase=phase.switch_spirit;
+                            break;
+                        case 3:
+                            current_phase=phase.run;
+                            break;
+                        }
+                    }
+            break;
+        case phase.fight:
+            break;
+        case phase.item:
+            break;
+        case phase.switch_spirit:
+            break;
+        case phase.run:
+            break;
+        case phase.damage_calculation:
+            break;
+        case phase.endbattle:
+            break;
+        }
+        }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+  </events>
   <PhysicsObject>0</PhysicsObject>
   <PhysicsObjectSensor>0</PhysicsObjectSensor>
   <PhysicsObjectShape>0</PhysicsObjectShape>

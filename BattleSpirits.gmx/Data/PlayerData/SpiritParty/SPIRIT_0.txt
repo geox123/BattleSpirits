@@ -1,0 +1,2 @@
+Species,Nickname,EXP,Level,Nature,Item,LinkLevel,Form,Ability,PID,MetLocation,Gem,MetLevel,MetDate,EV_HP,EV_ATTACK,EV_DEFENSE,EV_SP_ATTACK,EV_SP_DEFENSE,EV_SPEED,HiddenPower,MOVE_1,MOVE_2,MOVE_3,MOVE_4,TrainerID,OriginalTrainerName,LatestTrainer
+0,0,0,1,0,0,0,0,0,0,0,0,1,20150120,0,0,0,0,0,0,0,0,0,0,0,0,0,0
