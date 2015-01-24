@@ -11,34 +11,41 @@
     <event eventtype="0" enumb="0">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>601</id>
+        <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
+        <exetype>1</exetype>
+        <functionname>action_execute_script</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>1</kind>
-            <string>battleover = false;
-enum phase{
-        fight,
-        item,
-        switch_spirit,
-        run,
-        action,
-        damage_calculation,
-        endbattle
-    }
-current_phase = phase.action;    
-action_taken = false;
-cursor_pos = 0;
-</string>
+            <kind>9</kind>
+            <script>scr_GameInit</script>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string></string>
           </argument>
         </arguments>
       </action>
@@ -58,27 +65,11 @@ cursor_pos = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spirit_player[0] = 0;
-  var i = 0;
- file = file_text_open_read(working_directory + "\SpiritData\BaseStats.txt");
- file_text_readln(file);
- while (!file_text_eof(file))
-    {
-    spirit_data1[i]= file_text_read_string(file);
-    i++;
-    file_text_readln(file);
-    }
- var subset_start=1;
- var datalocation=0;
- for(i=1;i&lt;=string_length(spirit_data1[0]);i++)
-    {
-    if(string_char_at(spirit_data1[0], i)==','){
-        spirit_player[datalocation]=real(string_copy(spirit_data1[0], subset_start, i-subset_start));
-        subset_start=i+1;
-        datalocation++;
-        }
-    }
- file_text_close(file);
+            <string>battleover = false;
+
+current_phase = phase.action;    
+action_taken = false;
+cursor_pos = 0;
 </string>
           </argument>
         </arguments>
